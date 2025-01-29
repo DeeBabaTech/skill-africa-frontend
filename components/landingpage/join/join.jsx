@@ -1,6 +1,5 @@
 "use client";
 
-import img1 from "./image 6.svg";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,8 +24,15 @@ const Join = () => {
           brighter future for freelance work in Africa.
         </h2>
       </div>
-      <div className='md:w-2/5 w-4/5 mx-auto mt-5 md:mt-0'>
-        <Image src={img1} alt='img1' />
+      <div className='md:w-1/2 w-4/5 mx-auto mt-5 md:mt-0'>
+        <Image
+          src='/images/10.JPG'
+          alt='img1'
+          width='1000'
+          height='1000'
+          className="h-[30rem] object-cover rounded-md"
+          priority
+        />
       </div>
     </div>
   );

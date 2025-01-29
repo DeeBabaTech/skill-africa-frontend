@@ -1,10 +1,5 @@
 "use client";
 
-import img1 from "./image 2.svg";
-import img2 from "./image 5.svg";
-import img3 from "./image 4.svg";
-import img4 from "./image 3.svg";
-import img5 from "./image 1.svg";
 import img6 from "./Component 2.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +10,7 @@ import NumberTicker from "@/components/magicui/number-ticker";
 import Marquee from "@/components/magicui/marquee";
 import BoxReveal from "@/components/magicui/box-reveal";
 import BlurIn from "@/components/magicui/blur-in";
+import skillAfrikaImages from "@/components/landingpage/images.json";
 
 const Hero = () => {
   useEffect(() => {
@@ -50,11 +46,18 @@ const Hero = () => {
         </Link>
       </div>
       <div className='md:flex gap-2 overflow-hidden hidden w-full'>
-        <Marquee pauseOnHover className='[--duration:15s]'>
-          <Image src={img2} alt='img1' />
-          <Image src={img3} alt='img1' />
-          <Image src={img4} alt='img1' />
-          <Image src={img5} alt='img1' />
+        <Marquee pauseOnHover className='[--duration:200s]'>
+          {skillAfrikaImages.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={image}
+              width='1000'
+              height='1000'
+              className='w-72 h-60 rounded-md'
+              priority
+            />
+          ))}
         </Marquee>
       </div>
       <Marquee pauseOnHover className='[--duration:15s]'>

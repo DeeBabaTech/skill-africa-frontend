@@ -72,7 +72,7 @@ export default function RegisterForm() {
         if (res?.ok) {
           enqueueSnackbar("Registration Successful", { variant: "success" });
           setTimeout(() => {
-            router.replace("/profile/prof-reg");
+            router.push("/profile/prof-reg");
           }, 2000);
           setLoading(false);
         }

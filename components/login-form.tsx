@@ -54,7 +54,7 @@ export default function LoginForm() {
       setLoading(true);
       const res = await signIn("login", {
         redirect: false,
-        callbackUrl: '/profile',
+        callbackUrl: "/profile",
         email: values.email,
         password: values.password,
       });

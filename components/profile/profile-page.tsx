@@ -20,11 +20,10 @@ const ProfilePage = () => {
 
   console.log(data, isFetched);
 
-  useEffect(() => {
-    if (isFetched && !data?.first_name) {
-      router.push("profile/prof-reg");
-    }
-  }, [isFetched, data]);
+  if (isFetched && !data?.first_name) {
+    router.push("profile/prof-reg");
+    return;
+  }
 
   if (isLoading) {
     return <Loader />;

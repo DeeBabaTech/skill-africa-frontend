@@ -88,13 +88,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async redirect({ url, baseUrl }: { url: string; baseUrl: string }) {
-      if (url === "/login") {
-        return `${baseUrl}/profile`;
-      }
-      if (url === "/register") {
-        return `${baseUrl}/profile/prof-reg`;
-      }
-      return url.startsWith(baseUrl) ? url : baseUrl;
+      return url.startsWith(baseUrl) ? url : baseUrl + "/profile";
     },
   },
 };

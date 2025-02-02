@@ -61,7 +61,8 @@ export default function LoginForm() {
 
       if (res?.ok) {
         enqueueSnackbar("Login Successful", { variant: "success" });
-        router.push("/profile");
+        window.location.href = "/profile";
+        // router.push("/profile", undefined, { shallow: true });
         setLoading(false);
       }
 

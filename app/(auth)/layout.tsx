@@ -5,6 +5,14 @@ import Link from "next/link";
 import { useGetProfile } from "../api/get-profile";
 import { Bell, ChevronDown } from "lucide-react";
 import { Avatar } from "@mui/material";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -36,16 +44,22 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
             <div className='flex items-center gap-3'>
               <Bell size={20} />
               <Avatar
-                src={profileData?.profile?.profile_pic}
+                src={profileData?.profile_pic}
                 sx={{ width: 30, height: 30 }}
               />
-              <ChevronDown size={16} />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <ChevronDown size={16} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className='mt-2 mr-5'>
+                  <DropdownMenuItem>
+                    <div onClick={() => signOut()} className='text-red-500'>
+                      Log out
+                    </div>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
-            <button
-              className='bg-red-500 hover:bg-red-600 text-white py-2 md:px-4 px-1 rounded-md'
-              onClick={() => signOut()}>
-              Log out
-            </button>
           </div>
         )}
       </header>

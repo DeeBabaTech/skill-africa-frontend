@@ -30,7 +30,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <main className='container mx-auto px-5 py-8'>
+    <main className='container mx-auto px-5'>
       <div className='outline outline-slate-100  shadow-md rounded-lg p-6'>
         <div className='md:flex items-center gap-10'>
           <img

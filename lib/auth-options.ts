@@ -1,5 +1,4 @@
 import { apiLogin, apiRegister } from "./services/api/auth-api";
-import { jwt } from "@/lib/utils";
 import type { NextAuthOptions, Session } from "next-auth";
 import type { DefaultJWT, JWT } from "next-auth/jwt";
 import { z } from "zod";
